@@ -93,20 +93,63 @@ class Student {
         this.learningPaths = [] = learningPaths;
     }
 }
+class Course {
+    constructor({
+        name, 
+        clases = [],
+        }) {
+        this.name = name;
+        this.clases = clases;
+    }
+}
+
+const cursoProgBasica = new Course({
+    name: "Curso gratis de programacion basica"
+    
+});
+
 
 class LearningPath {
     constructor({
-        Curso,
-    }) {
-        this.Curso = Curso;
+        name, 
+        courses,
+        }) {
+        this.name = name;
+        this.courses = courses;
     }
 }
+
+const escuelaWeb = new LearningPath({
+    name: "Escuela de Desarrollo Web",
+    courses: [
+        "Curso Definitivo de HTML y CSS",
+        "Curso Practico de HTML y CSS",
+    ]
+});
+const escuelaData = new LearningPath({
+    name: "Escuela de Data Science",
+    courses: [
+        "Curso Data Business",
+        "Curso Dataviz",
+    ]
+});
+const escuelaVgs = new LearningPath({
+    name: "Escuela de Video Juegos",
+    courses: [
+        "Curso de Unity",
+        "Curso de Unreal",
+    ]
+});
 
 const juan2 = new Student({
     name: "JuanDC",
     username: "juandc",
     email: "juanito@juanito.com",
     tweeter: "fjuandc",
+    learningPaths: [
+        escuelaVgs,
+        escuelaData,
+    ]
 });
 
 const miguelito2 = new Student({
@@ -114,8 +157,9 @@ const miguelito2 = new Student({
     username: "miguelitofeliz",
     email: "miguelito@juanito.com",
     tweeter: "miguelito_feliz",
+    learningPaths: [
+        escuelaWeb,
+        escuelaData,
+    ]
 });
 
-const escuelaWeb = new LearningPath();
-const escuelaData = new LearningPath();
-const escuelaVgs = new LearningPath();
